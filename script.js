@@ -1,4 +1,4 @@
-
+localStorage.getItem
 
 
 let addbtn=document.getElementById('add_btn')
@@ -10,18 +10,27 @@ function addtext(e){
  let currentinput=document.getElementById('input')
  let currenttext= currentinput.value
 
- //adding text in to todo list
- let newli=document.createElement('li')
- newli.className=("list-group-item d-flex justify-content-between")
- newli.innerHTML=`<h3 class="flex-grow-1">${currenttext}</h3>
-           <button class=" btn btn-warning mx-2 " onclick="edit(this)"  >Edit</button>
-           <button class="btn btn-danger " onclick="removetext(this)" >Remove</button>`
+ if(!currenttext){
+    alert("please fill out the task..!");
 
- let list=document.getElementById('list');
- list.appendChild(newli)
+ }
+ else{
+    alert("success");
+    //adding text in to todo list
+    let newli=document.createElement('li')
+    newli.className=("list-group-item d-flex justify-content-between")
+    newli.innerHTML=`<h3 class="flex-grow-1">${currenttext}</h3>
+            <button class=" btn btn-warning mx-2 " onclick="edit(this)"  >Edit</button>
+            <button class="btn btn-danger " onclick="removetext(this)" >Remove</button>`
 
- 
-
+    // for adding new tsk list 
+    let list=document.getElementById('list');
+    list.appendChild(newli);
+    
+    // for clearing field after submit
+    currentinput.value=' ';  
+    return;
+     }
 
 
 }
@@ -32,7 +41,7 @@ function removetext(element){
 
 }
 
-//editing text
+//editing text 
 function edit(element){
  if(element.textContent=='Done'){
  element.textContent='Edit'
@@ -56,12 +65,4 @@ function edit(element){
 
 
  }
-
-
-
- 
-
- 
-
-
 }
