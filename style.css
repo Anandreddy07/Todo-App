@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(241, 236, 236);
+    
+   
+
+}
+.main{
+    width: 1000px;
+}
+h2, h4{
+background: -webkit-linear-gradient(45deg, red,blue,brown,rgb(223, 9, 9));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+
+@media screen and(max-width:380px) {
+    body{
+        margin: 20px;
+    }
+    .input{
+        width: 100%;
+    }
+    
+}
